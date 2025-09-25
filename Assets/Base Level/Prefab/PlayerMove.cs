@@ -9,6 +9,7 @@ using UnityEngine.InputSystem; // 1. The Input System "using" statement
 public class PlayerMove : MonoBehaviour
 {
     public Rigidbody rb;
+    private Animator animator;
 
     //Important: public variables values set in the Unity editor will overwrite this init value set in code
     public float forwardSpeed = 1f;
@@ -35,7 +36,6 @@ public class PlayerMove : MonoBehaviour
         moveValue = moveAction.ReadValue<Vector2>();
         MovePlayer();
 
-       
 
         /*Older version code that can still work with Unity 6 after system setting change
         if (Input.GetKey("w"))
@@ -45,7 +45,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey("d"))
             rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
         */
-        
+
     }
     //Move player forward
     private void MovePlayer()
